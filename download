@@ -1,0 +1,5 @@
+test_*.py
+demo*.py
+__pycache__
+*.zip
+data

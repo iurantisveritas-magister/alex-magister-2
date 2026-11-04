@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: alex-magister-2
+    runtime: docker
+    plan: starter
+    healthCheckPath: /healthz
+    disk:
+      name: alex-datos
+      mountPath: /data
+      sizeGB: 5
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: TRUST_PROXY
+        value: "1"
+      - key: COOKIE_SECURE
+        value: "1"
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ALEX_PROVEEDOR
+        sync: false
+      - key: ALEX_MODELO
+        sync: false
+      - key: ALEX_ANTHROPIC_KEY
+        sync: false
+      - key: ALEX_OPENAI_KEY
+        sync: false
